@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T0W-KD-vgp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Get Car-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CarDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CarDataViewController" customModule="GetCar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mO7-kg-gsE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <segments>
+                                    <segment title="By List"/>
+                                    <segment title="By Map"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="aDL-hx-Paz"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aU-9a-pdX">
+                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9aU-9a-pdX" firstAttribute="top" secondItem="mO7-kg-gsE" secondAttribute="bottom" id="Awz-Il-e9i"/>
+                            <constraint firstItem="mO7-kg-gsE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IlG-M0-Ubu"/>
+                            <constraint firstItem="mO7-kg-gsE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hxj-Td-MPn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mO7-kg-gsE" secondAttribute="trailing" id="kvW-vc-RNr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9aU-9a-pdX" secondAttribute="bottom" id="qbT-Vb-arH"/>
+                            <constraint firstItem="9aU-9a-pdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uT7-ru-vav"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9aU-9a-pdX" secondAttribute="trailing" id="vZb-kH-cQI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Get Car" id="1pa-iv-Ise"/>
+                    <connections>
+                        <outlet property="containerView" destination="9aU-9a-pdX" id="7WD-Vw-rT0"/>
+                        <outlet property="segmentControl" destination="mO7-kg-gsE" id="v4A-mA-UQW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="137.94642857142856"/>
+        </scene>
+        <!--Car By List View Controller-->
+        <scene sceneID="wL1-mB-K58">
+            <objects>
+                <viewController storyboardIdentifier="CarByListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sQz-8y-Nz8" customClass="CarByListViewController" customModule="GetCar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56D-3F-CnM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4B-Y6-ftn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="175"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Cars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA7-43-Gdg">
+                                        <rect key="frame" x="0.0" y="15" width="414" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2tW-cj-abg">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Aco-fl-jkC"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hhf-fS-6Ya">
+                                            <size key="itemSize" width="100" height="120"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarGroupCell" id="ABA-fu-cPK" customClass="CarGroupCell" customModule="GetCar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6v2-v9-Fk0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltC-0z-nHy">
+                                                            <rect key="frame" x="5" y="5" width="90" height="110"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaz-Rc-UOj">
+                                                                    <rect key="frame" x="20" y="10" width="50" height="64"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKT-sR-PQu">
+                                                                    <rect key="frame" x="0.0" y="84" width="80" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <color key="textColor" name="Appcolor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="CellColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="mKT-sR-PQu" secondAttribute="trailing" constant="10" id="Bkw-I8-zXn"/>
+                                                                <constraint firstAttribute="trailing" secondItem="qaz-Rc-UOj" secondAttribute="trailing" constant="20" id="NyO-fW-noU"/>
+                                                                <constraint firstItem="qaz-Rc-UOj" firstAttribute="top" secondItem="ltC-0z-nHy" secondAttribute="top" constant="10" id="OU3-c8-A1B"/>
+                                                                <constraint firstAttribute="bottom" secondItem="mKT-sR-PQu" secondAttribute="bottom" constant="10" id="Zzg-mo-IuK"/>
+                                                                <constraint firstItem="mKT-sR-PQu" firstAttribute="leading" secondItem="ltC-0z-nHy" secondAttribute="leading" id="gXI-aa-WEb"/>
+                                                                <constraint firstItem="qaz-Rc-UOj" firstAttribute="leading" secondItem="ltC-0z-nHy" secondAttribute="leading" constant="20" id="o3v-Ly-eWN"/>
+                                                                <constraint firstItem="mKT-sR-PQu" firstAttribute="top" secondItem="qaz-Rc-UOj" secondAttribute="bottom" constant="10" id="uNV-Yy-3kr"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ltC-0z-nHy" firstAttribute="leading" secondItem="6v2-v9-Fk0" secondAttribute="leading" constant="5" id="AVG-th-Kk9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ltC-0z-nHy" secondAttribute="trailing" constant="5" id="Ziu-dl-M4p"/>
+                                                        <constraint firstItem="ltC-0z-nHy" firstAttribute="top" secondItem="6v2-v9-Fk0" secondAttribute="top" constant="5" id="fkb-e9-XPA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ltC-0z-nHy" secondAttribute="bottom" constant="5" id="xd3-zU-vlB"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="carImg" destination="qaz-Rc-UOj" id="lUq-Sc-6Yb"/>
+                                                    <outlet property="groupName" destination="mKT-sR-PQu" id="5vB-Vg-3yN"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="sQz-8y-Nz8" id="N7P-kS-WJu"/>
+                                            <outlet property="delegate" destination="sQz-8y-Nz8" id="Qbn-Hk-U2R"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" name="Appcolor"/>
+                                <constraints>
+                                    <constraint firstItem="XA7-43-Gdg" firstAttribute="top" secondItem="x4B-Y6-ftn" secondAttribute="top" constant="15" id="0Ap-Ws-Nxv"/>
+                                    <constraint firstItem="2tW-cj-abg" firstAttribute="leading" secondItem="x4B-Y6-ftn" secondAttribute="leading" id="7kJ-lW-miQ"/>
+                                    <constraint firstItem="2tW-cj-abg" firstAttribute="top" secondItem="XA7-43-Gdg" secondAttribute="bottom" constant="20" id="OCo-cm-AIe"/>
+                                    <constraint firstAttribute="trailing" secondItem="2tW-cj-abg" secondAttribute="trailing" id="hOH-8J-FrM"/>
+                                    <constraint firstItem="XA7-43-Gdg" firstAttribute="leading" secondItem="x4B-Y6-ftn" secondAttribute="leading" id="jWc-iX-Ldz"/>
+                                    <constraint firstAttribute="trailing" secondItem="XA7-43-Gdg" secondAttribute="trailing" id="wJ3-Re-Nrw"/>
+                                    <constraint firstAttribute="height" constant="175" id="xIx-O9-7ue"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tg3-qv-rso">
+                                <rect key="frame" x="0.0" y="219" width="414" height="643"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sQz-8y-Nz8" id="EHK-mm-Mnr"/>
+                                    <outlet property="delegate" destination="sQz-8y-Nz8" id="0T9-CW-G7f"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X5D-Go-gbM" firstAttribute="trailing" secondItem="tg3-qv-rso" secondAttribute="trailing" id="5VJ-0m-3JG"/>
+                            <constraint firstItem="tg3-qv-rso" firstAttribute="leading" secondItem="X5D-Go-gbM" secondAttribute="leading" id="PuZ-Hz-Lp6"/>
+                            <constraint firstItem="x4B-Y6-ftn" firstAttribute="top" secondItem="X5D-Go-gbM" secondAttribute="top" id="Tfj-bX-h6J"/>
+                            <constraint firstItem="X5D-Go-gbM" firstAttribute="trailing" secondItem="x4B-Y6-ftn" secondAttribute="trailing" id="dii-do-CYh"/>
+                            <constraint firstItem="tg3-qv-rso" firstAttribute="top" secondItem="x4B-Y6-ftn" secondAttribute="bottom" id="oew-ey-VfF"/>
+                            <constraint firstItem="x4B-Y6-ftn" firstAttribute="leading" secondItem="X5D-Go-gbM" secondAttribute="leading" id="vD2-kn-AvM"/>
+                            <constraint firstItem="X5D-Go-gbM" firstAttribute="bottom" secondItem="tg3-qv-rso" secondAttribute="bottom" id="yVp-wP-lqL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X5D-Go-gbM"/>
+                    </view>
+                    <connections>
+                        <outlet property="carTableView" destination="tg3-qv-rso" id="kKv-tc-TFt"/>
+                        <outlet property="groupCollectionView" destination="2tW-cj-abg" id="kqH-3P-fyW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAi-Up-8La" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886.9565217391305" y="-106.47321428571428"/>
+        </scene>
+        <!--Car By Map View Controller-->
+        <scene sceneID="KG7-pe-oPC">
+            <objects>
+                <viewController storyboardIdentifier="CarByMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hQ5-tP-65D" customClass="CarByMapViewController" customModule="GetCar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p06-rv-zaN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PaT-EQ-H0t">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWE-ej-b94">
+                                <rect key="frame" x="10" y="767" width="394" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRQ-fp-U2U">
+                                        <rect key="frame" x="369" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Fcf-aQ-1dZ"/>
+                                            <constraint firstAttribute="height" constant="25" id="HbG-3A-e4w"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="cross"/>
+                                        <connections>
+                                            <action selector="closeAction:" destination="hQ5-tP-65D" eventType="touchUpInside" id="omS-BD-k7f"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="PRo-N8-AtB">
+                                        <rect key="frame" x="10" y="20" width="40" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Syy-ZV-2q1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-Uq-tZQ">
+                                        <rect key="frame" x="80" y="30" width="74" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tym-PC-vlG">
+                                        <rect key="frame" x="80" y="62" width="65" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15S-hB-Unc">
+                                        <rect key="frame" x="284" y="30" width="65" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swa-gy-9qZ">
+                                        <rect key="frame" x="284" y="62" width="65" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Swa-gy-9qZ" firstAttribute="trailing" secondItem="15S-hB-Unc" secondAttribute="trailing" id="L53-rH-vaD"/>
+                                    <constraint firstItem="dTn-Uq-tZQ" firstAttribute="top" secondItem="15S-hB-Unc" secondAttribute="top" id="NAt-ak-vMQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="15S-hB-Unc" secondAttribute="trailing" constant="45" id="Q9M-nN-cg5"/>
+                                    <constraint firstItem="dRQ-fp-U2U" firstAttribute="top" secondItem="RWE-ej-b94" secondAttribute="top" id="W3U-ku-6a2"/>
+                                    <constraint firstAttribute="trailing" secondItem="dRQ-fp-U2U" secondAttribute="trailing" id="Xro-nO-Sfb"/>
+                                    <constraint firstItem="15S-hB-Unc" firstAttribute="top" secondItem="RWE-ej-b94" secondAttribute="top" constant="30" id="YTB-Am-Wet"/>
+                                    <constraint firstItem="dTn-Uq-tZQ" firstAttribute="leading" secondItem="PRo-N8-AtB" secondAttribute="trailing" constant="30" id="fQt-u6-U0t"/>
+                                    <constraint firstItem="Swa-gy-9qZ" firstAttribute="top" secondItem="tym-PC-vlG" secondAttribute="top" id="gVD-x3-Cl2"/>
+                                    <constraint firstItem="Swa-gy-9qZ" firstAttribute="top" secondItem="15S-hB-Unc" secondAttribute="bottom" constant="15" id="hbZ-mC-EKa"/>
+                                    <constraint firstItem="PRo-N8-AtB" firstAttribute="leading" secondItem="RWE-ej-b94" secondAttribute="leading" constant="10" id="jcX-Hv-uRi"/>
+                                    <constraint firstItem="PRo-N8-AtB" firstAttribute="centerY" secondItem="RWE-ej-b94" secondAttribute="centerY" id="jiz-Da-gYX"/>
+                                    <constraint firstItem="tym-PC-vlG" firstAttribute="leading" secondItem="dTn-Uq-tZQ" secondAttribute="leading" id="v9T-0N-UUp"/>
+                                    <constraint firstAttribute="height" constant="90" id="zQB-mg-Bfw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Shp-Z7-wsH" firstAttribute="trailing" secondItem="RWE-ej-b94" secondAttribute="trailing" constant="10" id="0Vd-Vj-Mfj"/>
+                            <constraint firstItem="RWE-ej-b94" firstAttribute="leading" secondItem="Shp-Z7-wsH" secondAttribute="leading" constant="10" id="DKx-1d-zZj"/>
+                            <constraint firstItem="Shp-Z7-wsH" firstAttribute="bottom" secondItem="RWE-ej-b94" secondAttribute="bottom" constant="5" id="Kh8-4P-5rb"/>
+                            <constraint firstItem="Shp-Z7-wsH" firstAttribute="trailing" secondItem="PaT-EQ-H0t" secondAttribute="trailing" id="Zps-Zn-7as"/>
+                            <constraint firstItem="PaT-EQ-H0t" firstAttribute="leading" secondItem="Shp-Z7-wsH" secondAttribute="leading" id="noX-a8-eKP"/>
+                            <constraint firstItem="PaT-EQ-H0t" firstAttribute="top" secondItem="Shp-Z7-wsH" secondAttribute="top" id="r0N-iZ-EdA"/>
+                            <constraint firstItem="Shp-Z7-wsH" firstAttribute="bottom" secondItem="PaT-EQ-H0t" secondAttribute="bottom" id="t5f-Sp-4Sh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Shp-Z7-wsH"/>
+                    </view>
+                    <connections>
+                        <outlet property="carImage" destination="PRo-N8-AtB" id="yRc-YI-0dG"/>
+                        <outlet property="carMake" destination="tym-PC-vlG" id="Bu2-bc-wLs"/>
+                        <outlet property="carName" destination="dTn-Uq-tZQ" id="uAf-nR-8dN"/>
+                        <outlet property="carPlate" destination="Swa-gy-9qZ" id="Y10-fc-LP3"/>
+                        <outlet property="carSeries" destination="15S-hB-Unc" id="fdf-XM-KjF"/>
+                        <outlet property="carView" destination="RWE-ej-b94" id="xIF-yT-V3L"/>
+                        <outlet property="mapView" destination="PaT-EQ-H0t" id="dUX-zT-Hpl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDj-bT-yDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902.8985507246377" y="588.61607142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jAI-87-Ytf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T0W-KD-vgp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X95-ZS-ndR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eJa-Lq-K33"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJe-XE-Mey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Placeholder" width="30" height="50"/>
+        <image name="cross" width="21.5" height="21.5"/>
+        <namedColor name="Appcolor">
+            <color red="0.16300000250339508" green="0.20299999415874481" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CellColor">
+            <color red="0.95300000905990601" green="0.95300000905990601" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
